@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Holder</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url(https://farm5.staticflickr.com/4397/36576053190_37d6a72e14_k.jpg);
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            font-size: 32px;
+            color: white;
+            text-shadow: 2px 2px black;
+
+        }
+
+
+        #time-display {
+            font-size: 6em;
+        }
+
+        #temp {}
+
+        #time {
+            margin-top: 10%;
+        }
+
+        .fa-wine-bottle {
+            color: #339AF0;
+        }
+
+        #drink-list {}
+
+        .drink-list {
+            font-size: .7em;
+            opacity: .5;
+            margin-top: 3px;
+            padding: 3px;
+        }
+
+        /* .drank {
+    color: #339AF0;
+    opacity: 1.0;
+} */
+
+        ul li:hover {
+            cursor: pointer;
+            color: red;
+        }
+
+        .btn-warning {
+            background-color: rgba(252, 186, 3, 0.05);
+        }
+
+        #qoute {
+            font-family: 'Lora', serif;
+        }
+    </style>
+</head>
+
+<body class="container-fluid">
+
+    <header class="container-fluid">
+
+        <section id="drink-section" class="row">
+            <ul class="drink-list list-unstyled list-inline col-8">
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle drank d-inline-block"></i></li>
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle"></i></li>
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle"></i></li>
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle"></i></li>
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle"></i></li>
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle"></i></li>
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle"></i></li>
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle"></i></li>
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle"></i></li>
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle"></i></li>
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle"></i></li>
+                <li class="list-inline-item bottle"><i class="fas fa-wine-bottle"></i></li>
+            </ul>
+            <p id="temp" class="col-4 d-flex justify-content-end">Rainy 52 High 60</p>
+        </section>
+
+    </header>
+
+    <main id="time" class="container d-flex justify-content-center align-content-center">
+        <section class="">
+            <h2 id="time-display" class="d-flex flex-column">8:42</h2>
+        </section>
+    </main>
+
+    <footer class="container-fluid  fixed-bottom">
+        <section>
+            <button class="btn btn-warning">Change Background</button>
+        </section>
+        <h2 id="qoute" class="d-flex justify-content-center">"Cleanliness is next to Godliness"</h2>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script>
+
+        // Time logic to display live time
+
+        function formatAMPM() {
+            const date = new Date();
+            let hours = date.getHours();
+            let days = date.getDay();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let ampm = hours >= 12 ? 'pm' : 'am';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            let strTime = `${hours}:${minutes}`;
+            document.title = strTime;
+            document.getElementById("time-display").innerHTML = strTime;
+        }
+
+        setInterval(formatAMPM, 10);
+
+        // Drink Bottle click hide
+
+        $(".bottle").click(function () {
+            $(this).hide();
+        });
+
+// Change background button
+
+
+// Quote generation logic
+
+
+// Show tempeture - hardcoded zipcode - Later it will ask for the zipcode and then it will take that as the location
+    </script>
+</body>
+
+</html>

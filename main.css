@@ -1,0 +1,55 @@
+
+
+
+
+body { 
+    background: url(https://farm5.staticflickr.com/4397/36576053190_37d6a72e14_k.jpg);
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-size: 32px;
+    color: white;
+    text-shadow: 2px 2px black;
+    
+  }
+
+
+#time-display {
+    font-size: 6em;
+}
+
+#temp {
+    
+}
+
+#time {
+    margin-top: 10%;
+}
+
+.fa-wine-bottle {
+    color: #339AF0;
+}
+
+#drink-list {
+
+}
+
+.drink-list {
+    font-size: .7em;
+    opacity: .5;
+    margin-top: 3px;
+    padding: 3px;
+}
+
+ul li:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.btn-warning {
+    background-color: rgba(252, 186, 3, 0.05);
+}
+
+#qoute {
+    font-family: 'Lora', serif;
+}
